@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&family=Silkscreen&display=swap');
+
+body {
+    color: black;
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+}
+
+.title {
+    font-family: 'Silkscreen';
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 370px;
+}
+
+.tetrisContainer {
+    max-width: 800;
+    max-height: 1790px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.glass {
+     
+    width: 370px;
+    height: 740px; 
+    background-color: rgb(234, 234, 234);
+    padding: 0px;
+    margin: 0;
+    border-radius: 5px;
+    text-align: center;
+}
+pre {
+    font-family: 'Inconsolata';
+    width: 370px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 27px;
+    /* line-height: 30px; */
+    font-weight: bolder;
+    white-space: pre;
+    text-align: center;
+}
+.scoreH {
+     
+    width: 380px;
+    font-family: 'Inconsolata';
+    font-size: 24px;
+    /* background-color: rgb(230, 230, 230); */
+    text-align: center;
+    /* line-height: 5px */
+    /* padding-left: 30px  */
+    margin-left: 0px;
+    
+}
