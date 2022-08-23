@@ -26,12 +26,12 @@ body {
 
 .title {
     font-family: 'Silkscreen';
-    height: 60px;
+    height: 54px;
     background-color: bisque;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;   
-    letter-spacing: 10px;
+    letter-spacing: 13px;
     border-radius: 7px;
 }
 
