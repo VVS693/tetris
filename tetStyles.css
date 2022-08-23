@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+} 
 
 body {
     color: black;
@@ -9,52 +15,55 @@ body {
     display: flex;
 }
 
-.title {
-    font-family: 'Silkscreen';
-    font-size: 42px;
-    font-weight: bold;
-    margin-bottom: 0px;
-    text-align: center;
-    width: 370px;
-}
-
 .tetrisContainer {
     max-width: 800;
-    max-height: 1790px;
+    width: 300px;
     margin: auto;
-    padding-top: 10px;
+    padding-top: 5px;
+    
 }
 
-.glass {
-     
-    width: 370px;
-    height: 740px; 
-    background-color: rgb(234, 234, 234);
-    padding: 0px;
-    margin: 0;
-    border-radius: 5px;
-    text-align: center;
+
+.title {
+    font-family: 'Silkscreen';
+    height: 60px;
+    background-color: bisque;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;   
+    letter-spacing: 10px;
+    border-radius: 7px;
 }
+
+.glassBox {
+    height: 600px; 
+    background-color: rgb(234, 234, 234);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-radius: 7px;
+}
+
 pre {
-    font-family: 'Inconsolata';
-    width: 370px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 27px;
-    /* line-height: 30px; */
+    font-family: 'Source Code Pro';
+    font-size: 30px;
     font-weight: bolder;
     white-space: pre;
     text-align: center;
+    line-height: 0.75em; 
+    letter-spacing: 4px;
 }
+
 .scoreH {
      
-    width: 380px;
-    font-family: 'Inconsolata';
-    font-size: 24px;
-    /* background-color: rgb(230, 230, 230); */
+    font-family: 'Source Code Pro';
+    font-size: 22px;
+    font-weight: 700;
+    background-color: bisque;
     text-align: center;
-    /* line-height: 5px */
+    line-height: 35px; 
+    border-radius: 7px;
     /* padding-left: 30px  */
-    margin-left: 0px;
+    /* margin-left: 0px; */
     
 }

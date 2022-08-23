@@ -26,13 +26,10 @@ function figInGlass (figure, glassCurrent, x, y) {
 }
 // вывод на экран
 function drawGlass (glassTemp) {
-    let textTest = document.getElementById("glassEl")
-    glassEl.innerText = glassTemp.join('\n').replaceAll(',', ' ').replaceAll(1, glassMark).replaceAll(0, ' ')
+    let textTest = document.getElementById("glassIn")
+    glassIn.innerText = glassTemp.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
     let scoreH = document.getElementById("scoreH")
     scoreH.innerText = 'FIGUREs: ' + score.figures + '    LINEs: ' + score.lines
-    // console.log('%cTOTAL SCORE:', 'font-weight: bold; color: red')
-    // console.log('FIGUREs_____ ' + score.figures)
-    // console.log('LINEs_______ ' + score.lines) 
 }
 
 function drawGlassOld (glassTemp) {
@@ -42,6 +39,7 @@ function drawGlassOld (glassTemp) {
     console.log('FIGUREs_____ ' + score.figures)
     console.log('LINEs_______ ' + score.lines) 
 }
+
 // Game over
 function gameOver() {
     let textTest = document.getElementById("title")

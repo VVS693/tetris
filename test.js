@@ -1,3 +1,6 @@
+
+
+
 // Tetris start
 "use strict";
 // стакан для математики
@@ -30,7 +33,9 @@ const glass = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
-const glassMark = '☐' // символ рисования стенок и фигур
+// const glassMark = '■' // символ рисования стенок и фигур
+const glassMark = '☐'
+
 const timerStart = 350 // начальная скорость
 const timerTemp = 25 // скорость падения
 const score = {
@@ -38,40 +43,13 @@ const score = {
     lines: 0
 }
 
-// определяем фигуры
-let O = [
-    [1, 1],
-    [1, 1]
-]
-let I = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [1, 1, 1, 1],
-    [0, 0, 0, 0]
-]
-let L = [
-    [0, 1, 0],
-    [0, 1, 0],
-    [0, 1, 1]
-]
-let T = [
-    [0, 1, 0],
-    [1, 1, 1],
-    [0, 0, 0]
-]
-let J = [
-    [0, 1, 0],
-    [0, 1, 0],
-    [1, 1, 0]
-]
-let Z = [
-    [1, 1, 0],
-    [0, 1, 1],
-    [0, 0, 0]
-]
-let S = [
-    [0, 1, 1],
-    [1, 1, 0],
-    [0, 0, 0]
-]
-const currentFigures = [O, I, L, T, J, Z, S]
+let textTest = document.getElementById("glassIn")
+// console.log(textTest)
+// glassEl.innerText = "############"
+// let aaa = "###<br>#######фффффффффффффффффффффффффффффффффффффффффффффффф##"
+// glassEl.innerText = "###<br>#######фффффффффффффффффффффффффффффффффффффффффффффффф##"
+
+// let aaa = glass.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, '')
+
+let aaa = glass.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
+glassIn.innerText = aaa
