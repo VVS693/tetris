@@ -11,16 +11,48 @@
 <body>
 
     <div class="tetrisContainer">
-    
-        <div class="title" id="title">TETRIS</div>
-        
-        <div class="glassBox">
-        
-            <pre id="glassIn"></pre>    
 
+        <p id="title">TETRIS</p>
+
+       
+        
+        <div class="middle">
+
+            <div class="leftSide">
+
+                <pre id="glassIn"></pre>
+
+            </div>
+
+            <div class="rightSide">
+
+                <div class="nextFigure">
+                    <pre id="nextFigure"></pre>
+                    
+                </div>
+                <p class="scoreText">NEXT:</p>
+
+                <p class="scoreValue" id="scoreFigures">0000</p>
+                <p class="scoreText">FIGUREs:</p>
+
+                <p class="scoreValue" id="scoreLines">0000</p>
+                <p class="scoreText">LINEs:</p>            
+
+            </div>
         </div>
-
-        <div class="scoreH" id="scoreH" ></div>
+    
+        <div class="buttons">
+            <button class="button" id="left">LEFT</button>
+            <button class="button" id="rotate">ROTATE</button>
+            <button class="button" id="right">RIGHT</button>
+            <button class="button" id="down">DOWN</button>
+        </div>
+       
+        
+        
+        
+            
+        
             
     </div>
 

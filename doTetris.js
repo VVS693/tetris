@@ -4,57 +4,68 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
     let xStartTemp = xStart;
     let yStartTemp = yStart;
 
-
-        function ArrowRight(event) {
-            if (event.code == "ArrowRight") {
-                if (
-                    figInGlass(currentFigure, glassCurrent, xStartTemp + 1, yStartTemp)
-                        .join()
-                        .includes(2)
-                ) {
-                    xStartTemp = xStartTemp;
-                } else {
-                    xStartTemp++;
-                    glassTemp = figInGlass(currentFigure, glassCurrent, xStartTemp, yStartTemp)
-                    drawGlass(glassTemp)
-                }
-            }
+    function ArrowLeft() {
+        if (
+            figInGlass(currentFigure, glassCurrent, xStartTemp - 1, yStartTemp)
+                .join()
+                .includes(2)
+        ) {
+            xStartTemp = xStartTemp;
+        } else {
+            xStartTemp--;
+            glassTemp = figInGlass(currentFigure, glassCurrent, xStartTemp, yStartTemp)
+            drawGlass(glassTemp)
         }
-        document.addEventListener("keydown", ArrowRight);
-
-        function ArrowLeft(event) {
-            if (event.code == "ArrowLeft") {
-                if (
-                    figInGlass(currentFigure, glassCurrent, xStartTemp - 1, yStartTemp)
-                        .join()
-                        .includes(2)
-                ) {
-                    xStartTemp = xStartTemp;
-                } else {
-                    xStartTemp--;
-                    glassTemp = figInGlass(currentFigure, glassCurrent, xStartTemp, yStartTemp)
-                    drawGlass(glassTemp)
-                }
-            }
+    }
+    function ArrowLeftKeydown(event) {
+        if (event.code == "ArrowLeft") {
+            ArrowLeft()
         }
-        document.addEventListener("keydown", ArrowLeft);
+    }
+    document.addEventListener("keydown", ArrowLeftKeydown);
+    document.getElementById("left").addEventListener("click", ArrowLeft);
 
-        function ArrowUp(event) {
-            if (event.code == "ArrowUp") {
-                if (
-                    figInGlass(rotateFigure(currentFigure), glassCurrent, xStartTemp, yStartTemp)
-                        .join()
-                        .includes(2) 
-                ) {
-                    currentFigure = currentFigure
-                } else {
-                    currentFigure = rotateFigure(currentFigure)
-                    glassTemp = figInGlass(currentFigure, glassCurrent, xStartTemp, yStartTemp)
-                    drawGlass(glassTemp)
-                }
+    function ArrowRight() {
+            if (
+                figInGlass(currentFigure, glassCurrent, xStartTemp + 1, yStartTemp)
+                    .join()
+                    .includes(2)
+            ) {
+                xStartTemp = xStartTemp;
+            } else {
+                xStartTemp++;
+                glassTemp = figInGlass(currentFigure, glassCurrent, xStartTemp, yStartTemp)
+                drawGlass(glassTemp)
             }
+    }
+    function ArrowRightKeydown(event) {
+        if (event.code == "ArrowRight") {
+            ArrowRight() 
         }
-        document.addEventListener("keydown", ArrowUp);
+    }
+    document.addEventListener("keydown", ArrowRightKeydown);
+    document.getElementById("right").addEventListener("click", ArrowRight);
+
+    function ArrowUp() {
+            if (
+                figInGlass(rotateFigure(currentFigure), glassCurrent, xStartTemp, yStartTemp)
+                    .join()
+                    .includes(2) 
+            ) {
+                currentFigure = currentFigure
+            } else {
+                currentFigure = rotateFigure(currentFigure)
+                glassTemp = figInGlass(currentFigure, glassCurrent, xStartTemp, yStartTemp)
+                drawGlass(glassTemp)
+            }
+    }
+    function ArrowUpKeydoen(event) {
+        if (event.code == "ArrowUp") {
+            ArrowUp()
+        }
+    }
+    document.addEventListener("keydown", ArrowUpKeydoen);
+    document.getElementById("rotate").addEventListener("click", ArrowUp);
 
         const promiseDraw = new Promise(function(resolve, reject) {
 
@@ -93,16 +104,26 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                 }, timer);    
             }
 
-            function ArrowDown(event) {
+            function ArrowDown() {
+                    document.removeEventListener("keydown", ArrowDownKeydown);
+                    document.getElementById("down").removeEventListener("click", ArrowDown);
+                    document.removeEventListener("keydown", ArrowLeftKeydown)
+                    document.getElementById("left").removeEventListener("click", ArrowLeft);
+                    document.removeEventListener("keydown", ArrowRightKeydown);
+                    document.getElementById("right").removeEventListener("click", ArrowRight);
+                    document.removeEventListener("keydown", ArrowUpKeydoen);
+                    document.getElementById("rotate").removeEventListener("click", ArrowUp);
+
+                    moveTimer(timerTemp) 
+            }
+            function ArrowDownKeydown(event) {
                 if (event.code == "ArrowDown") {
-                    document.removeEventListener("keydown", ArrowDown)
-                    document.removeEventListener("keydown", ArrowRight)
-                    document.removeEventListener("keydown", ArrowLeft)
-                    document.removeEventListener("keydown", ArrowUp)
+                    ArrowDown()
                     moveTimer(timerTemp) 
                 }
             }
-            document.addEventListener("keydown", ArrowDown);
+            document.addEventListener("keydown", ArrowDownKeydown);
+            document.getElementById("down").addEventListener("click", ArrowDown);
 
                 moveTimer(timer)
         })
@@ -113,13 +134,15 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                 score.figures++
             })
             .catch(score => {
+                document.removeEventListener("keydown", ArrowLeftKeydown)
+                document.getElementById("left").removeEventListener("click", ArrowLeft);
+                document.removeEventListener("keydown", ArrowRightKeydown);
+                document.getElementById("right").removeEventListener("click", ArrowRight);
+                document.removeEventListener("keydown", ArrowUpKeydoen);
+                document.getElementById("rotate").removeEventListener("click", ArrowUp);
 
-                document.removeEventListener("keydown", ArrowRight)
-                document.removeEventListener("keydown", ArrowLeft)
-                document.removeEventListener("keydown", ArrowUp)
-                
                     score.figures++
-                    // console.log('%cGAME OVER!!!', 'font-weight: bold; color: red; font-size: 24px')
+
                     gameOver()
                    
                     score.figures = 0

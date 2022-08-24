@@ -33,6 +33,38 @@ const glass = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
+
+let I = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [1, 1, 1, 1],
+    [0, 0, 0, 0]
+]
+let L = [
+    [0, 1, 0],
+    [0, 1, 0],
+    [0, 1, 1]
+]
+let T = [
+    [0, 1, 0],
+    [1, 1, 1],
+    [0, 0, 0]
+]
+let J = [
+    [0, 1, 0],
+    [0, 1, 0],
+    [1, 1, 0]
+]
+let Z = [
+    [1, 1, 0],
+    [0, 1, 1],
+    [0, 0, 0]
+]
+let S = [
+    [0, 1, 1],
+    [1, 1, 0],
+    [0, 0, 0]
+]
 // const glassMark = '■' // символ рисования стенок и фигур
 const glassMark = '☐'
 
@@ -44,12 +76,9 @@ const score = {
 }
 
 let textTest = document.getElementById("glassIn")
-// console.log(textTest)
-// glassEl.innerText = "############"
-// let aaa = "###<br>#######фффффффффффффффффффффффффффффффффффффффффффффффф##"
-// glassEl.innerText = "###<br>#######фффффффффффффффффффффффффффффффффффффффффффффффф##"
-
-// let aaa = glass.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, '')
 
 let aaa = glass.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
-glassIn.innerText = aaa
+textTest.innerText = aaa
+
+let aaa1 = L.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
+nextFigure.innerText = aaa1

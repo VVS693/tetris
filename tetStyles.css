@@ -12,39 +12,36 @@ body {
     color: black;
     font-size: 16px;
     font-weight: normal;
-    display: flex;
 }
 
 .tetrisContainer {
-    max-width: 800;
-    width: 300px;
+    width: 384px;
     margin: auto;
-    padding-top: 5px;
-    
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+
 }
 
-
-.title {
+.leftSide {
+    width: 270px;
+}
+#title {
     font-family: 'Silkscreen';
-    height: 54px;
-    background-color: bisque;
+    
+    width: 384px;
+    height: 50px;
+    background-color: gainsboro;
     font-size: 40px;
     font-weight: bold;
-    text-align: center;   
-    letter-spacing: 13px;
-    border-radius: 7px;
-}
-
-.glassBox {
-    height: 600px; 
-    background-color: rgb(234, 234, 234);
-    margin-top: 5px;
-    margin-bottom: 5px;
     text-align: center;
+    line-height: 50px;   
+    letter-spacing: 14px;
     border-radius: 7px;
+    margin-bottom: -10px;
 }
 
-pre {
+#glassIn {
     font-family: 'Source Code Pro';
     font-size: 30px;
     font-weight: bolder;
@@ -54,16 +51,63 @@ pre {
     letter-spacing: 4px;
 }
 
-.scoreH {
-     
+.rightSide {
+    width: 112px;
+    padding-top: 90px;
+    margin-left: 2px;
+}
+
+.nextFigure {
+    height: 115px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#nextFigure {
+    width: 100px;
     font-family: 'Source Code Pro';
-    font-size: 22px;
+    font-size: 30px;
+    font-weight: bolder;
+    white-space: pre;
+    text-align: center;
+    line-height: 0.75em; 
+    letter-spacing: 4px;
+}
+
+.scoreText {
+    font-family: 'Source Code Pro';
+    font-size: 20px;
     font-weight: 700;
-    background-color: bisque;
+    background-color: gainsboro;
     text-align: center;
     line-height: 35px; 
     border-radius: 7px;
-    /* padding-left: 30px  */
-    /* margin-left: 0px; */
-    
+}
+.scoreValue {
+    font-family: 'Source Code Pro';
+    margin-top: 107px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.middle {
+    display: flex;
+    margin-bottom: -10px;
+}
+.buttons {
+    text-align: center;
+   
+}
+.button {
+    font-family: 'Source Code Pro';
+    height: 40px;
+    width: 80px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 7px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
 }

@@ -26,10 +26,11 @@ function figInGlass (figure, glassCurrent, x, y) {
 }
 // вывод на экран
 function drawGlass (glassTemp) {
-    let textTest = document.getElementById("glassIn")
+    // let textTest = document.getElementById("glassIn")
     glassIn.innerText = glassTemp.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
-    let scoreH = document.getElementById("scoreH")
-    scoreH.innerText = 'FIGUREs: ' + score.figures + '    LINEs: ' + score.lines
+    // let scoreH = document.getElementById("scoreH")
+    scoreFigures.innerText = score.figures
+    scoreLines.innerText = score.lines
 }
 
 function drawGlassOld (glassTemp) {
