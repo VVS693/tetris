@@ -10,15 +10,10 @@
 
 body {
     color: black;
+    min-width: 384px;
     font-size: 16px;
     font-weight: normal;
 }
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-    select:focus, textarea:focus, input:focus {
-            font-size: 16px;
-        }
-    }
 
 .tetrisContainer {
     width: 384px;
