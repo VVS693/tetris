@@ -9,12 +9,21 @@
 } 
 
 body {
-    color: black;
+    /* position: fixed; */
     min-width: 384px;
     font-size: 16px;
     font-weight: normal;
+    color: black;
 }
 
+@media (max-width: 384px) {
+    body {
+         position:fixed;
+    }
+ }
+ @viewport {
+    user-zoom: fixed;
+  }
 .tetrisContainer {
     width: 384px;
     height: 705px;
