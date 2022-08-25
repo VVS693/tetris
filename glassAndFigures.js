@@ -37,6 +37,7 @@ const score = {
     figures: 0,
     lines: 0
 }
+let rnd = []
 
 // определяем фигуры
 let O = [

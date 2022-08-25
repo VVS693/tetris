@@ -132,7 +132,8 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
 
         promiseDraw
             .then((score) => {
-                doTetris(randomFigure(2, 5), 3, currentFigures[randomFigure(0, 6)], timer, glassCurrent)
+                rnd = currentFigures[randomFigure(0, 6)]
+                doTetris(randomFigure(2, 5), 3, rnd, timer, glassCurrent)
                 score.figures++
             })
             .catch(score => {

@@ -26,19 +26,10 @@ function figInGlass (figure, glassCurrent, x, y) {
 }
 // вывод на экран
 function drawGlass (glassTemp) {
-    // let textTest = document.getElementById("glassIn")
     glassIn.innerText = glassTemp.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
-    // let scoreH = document.getElementById("scoreH")
+    nextFigure.innerText = rnd.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
     scoreFigures.innerText = score.figures
     scoreLines.innerText = score.lines
-}
-
-function drawGlassOld (glassTemp) {
-    console.clear()
-    console.log(glassTemp.join('\n').replaceAll(',', ' ').replaceAll(1, glassMark).replaceAll(0, ' '))
-    console.log('%cTOTAL SCORE:', 'font-weight: bold; color: red')
-    console.log('FIGUREs_____ ' + score.figures)
-    console.log('LINEs_______ ' + score.lines) 
 }
 
 // Game over
