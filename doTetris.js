@@ -4,6 +4,8 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
     let xStartTemp = xStart;
     let yStartTemp = yStart;
 
+    rndSecond = currentFigures[randomFigure(0, 6)]
+
     function ArrowLeft() {
         if (
             figInGlass(currentFigure, glassCurrent, xStartTemp - 1, yStartTemp)
@@ -132,8 +134,7 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
 
         promiseDraw
             .then((score) => {
-                rnd = currentFigures[randomFigure(0, 6)]
-                doTetris(randomFigure(2, 5), 3, rnd, timer, glassCurrent)
+                doTetris(randomFigure(2, 5), 3, rndSecond, timer, glassCurrent)
                 score.figures++
             })
             .catch(score => {
@@ -155,4 +156,5 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
 
 let glassTemp = glass.map(el => el.slice());
 let glassCurrent = glass.map(el => el.slice());
-doTetris(randomFigure(2, 5), 3, currentFigures[randomFigure(0, 6)], timerStart, glassCurrent)
+rndFirst = currentFigures[randomFigure(0, 6)]
+doTetris(randomFigure(2, 5), 3, rndFirst, timerStart, glassCurrent)

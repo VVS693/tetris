@@ -27,7 +27,7 @@ function figInGlass (figure, glassCurrent, x, y) {
 // вывод на экран
 function drawGlass (glassTemp) {
     glassIn.innerText = glassTemp.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
-    nextFigure.innerText = rnd.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
+    nextFigure.innerText = rndSecond.join('\n').replaceAll(',', '').replaceAll(1, glassMark).replaceAll(0, ' ')
     scoreFigures.innerText = score.figures
     scoreLines.innerText = score.lines
 }
