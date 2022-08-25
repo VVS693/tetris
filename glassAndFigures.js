@@ -38,7 +38,7 @@ const score = {
     lines: 0
 }
 const maxDist = 270
-const minDist = 50
+const minDist = 45
 let rndFirst = []
 let rndSecond = []
 const zone = "leftSide"

@@ -70,9 +70,6 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
     document.getElementById("rotate").addEventListener("click", ArrowUp);
 
     function swipeRightLeftUp (zone) {
-        const maxDist = 270
-        const minDist = 50
-    
         let touchstartX = 0;
         let touchstartY = 0;
         let touchendX = 0;
