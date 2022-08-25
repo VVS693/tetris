@@ -6,6 +6,7 @@
 * {
     padding: 0;
     margin: 0;
+    touch-action: manipulation;
 } 
 
 body {
@@ -104,11 +105,11 @@ body {
 .button {
     font-family: 'Source Code Pro';
     height: 60px;
-    width: 80px;
+    width: 85px;
     font-size: 20px;
     font-weight: 700;
     border-radius: 7px;
     text-align: center;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
