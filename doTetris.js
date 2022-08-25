@@ -67,6 +67,8 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
     document.addEventListener("keydown", ArrowUpKeydoen);
     document.getElementById("rotate").addEventListener("click", ArrowUp);
 
+    document.getElementById("startButton").addEventListener("click", () => location.reload());    
+
         const promiseDraw = new Promise(function(resolve, reject) {
 
             function moveTimer(timer) {

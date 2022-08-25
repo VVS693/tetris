@@ -66,13 +66,13 @@ body {
 }
 
 .nextFigure {
-    height: 160px;
+    height: 110px;
     display: table-cell;
     vertical-align: middle;
 }
 
 #nextFigure {
-    width: 100px;
+    width: 112px;
     font-family: 'Source Code Pro';
     font-size: 30px;
     font-weight: bolder;
@@ -82,8 +82,19 @@ body {
     letter-spacing: 4px;
 }
 
+.nextText {
+    font-family: 'Source Code Pro';
+    margin-top: 66px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: gainsboro;
+    text-align: center;
+    line-height: 35px; 
+    border-radius: 7px;
+}
 .scoreText {
     font-family: 'Source Code Pro';
+    margin-top: 28px;
     font-size: 20px;
     font-weight: 700;
     background-color: gainsboro;
@@ -93,7 +104,7 @@ body {
 }
 .scoreValue {
     font-family: 'Source Code Pro';
-    margin-top: 107px;
+    margin-top: 5px;
     margin-bottom: 5px;
     font-size: 24px;
     font-weight: 700;
@@ -112,11 +123,25 @@ body {
     font-family: 'Source Code Pro';
     color: black;
     height: 60px;
-    width: 85px;
+    width: 86px;
     font-size: 20px;
     font-weight: 700;
     border-radius: 7px;
     text-align: center;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#startButton {
+    font-family: 'Source Code Pro';
+    height: 112px;
+    width: 112px;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 7px;
+    text-align: center;
+    margin-left: 3px;
+    margin-right: 3px; 
+    margin-top: 33px;
+    color: red;
 }
