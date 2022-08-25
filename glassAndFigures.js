@@ -37,8 +37,11 @@ const score = {
     figures: 0,
     lines: 0
 }
+const maxDist = 270
+const minDist = 50
 let rndFirst = []
 let rndSecond = []
+const zone = "leftSide"
 
 // определяем фигуры
 let O = [

@@ -69,6 +69,45 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
     document.addEventListener("keydown", ArrowUpKeydoen);
     document.getElementById("rotate").addEventListener("click", ArrowUp);
 
+    function swipeRightLeftUp (zone) {
+        const maxDist = 270
+        const minDist = 50
+    
+        let touchstartX = 0;
+        let touchstartY = 0;
+        let touchendX = 0;
+        let touchendY = 0;
+    
+        const gestureZone = document.getElementById(zone);
+    
+        gestureZone.addEventListener('touchstart', function(event) {
+            touchstartX = event.changedTouches[0].screenX;
+            touchstartY = event.changedTouches[0].screenY;
+        }, false);
+    
+        gestureZone.addEventListener('touchend', function(event) {
+            touchendX = event.changedTouches[0].screenX;
+            touchendY = event.changedTouches[0].screenY;
+            handleGesture();
+        }, false); 
+    
+        function handleGesture() {
+            if ((touchstartX - touchendX) >= minDist && (touchstartX - touchendX) <= maxDist) {
+                ArrowLeft();
+            }
+            
+            if ((touchendX - touchstartX) >= minDist && (touchendX - touchstartX) <= maxDist) {
+                ArrowRight();
+            }
+            
+            if ((touchstartY - touchendY) >= minDist && (touchstartY - touchendY) <= maxDist) {
+                ArrowUp();
+            }
+        }
+    }
+
+    swipeRightLeftUp(zone)
+
     document.getElementById("startButton").addEventListener("click", () => location.reload());    
 
         const promiseDraw = new Promise(function(resolve, reject) {
@@ -129,6 +168,33 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
             document.addEventListener("keydown", ArrowDownKeydown);
             document.getElementById("down").addEventListener("click", ArrowDown);
 
+
+            function swipeDown(zone) {
+
+                let touchstartY = 0;
+                let touchendY = 0;
+            
+                const gestureZone = document.getElementById(zone);
+            
+                gestureZone.addEventListener('touchstart', function(event) {
+                    touchstartY = event.changedTouches[0].screenY;
+                }, false);
+            
+                gestureZone.addEventListener('touchend', function(event) {
+                    touchendY = event.changedTouches[0].screenY;
+                    handleGesture();
+                }, false); 
+            
+                function handleGesture() {
+                    
+                    if ((touchendY - touchstartY) >= minDist && (touchendY - touchstartY) <= maxDist) {
+                        ArrowDown();
+                    }
+                }
+            }
+        
+                swipeDown(zone)
+
                 moveTimer(timer)
         })
 
@@ -158,3 +224,4 @@ let glassTemp = glass.map(el => el.slice());
 let glassCurrent = glass.map(el => el.slice());
 rndFirst = currentFigures[randomFigure(0, 6)]
 doTetris(randomFigure(2, 5), 3, rndFirst, timerStart, glassCurrent)
+
