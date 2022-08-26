@@ -14,7 +14,7 @@
 
 body {
     min-width: 384px;
-    height: 100vh;
+    /* height: 100vh; */
     overflow: hidden;
     overscroll-behavior: none;
     font-size: 16px;
@@ -31,9 +31,11 @@ body {
     /* transform: scale(var(--scaleTetris)); */
     /* transform: scale(1.43); */
     width: 384px;
-    height: 100vh;
+    /* height: 100vh; */
     position: fixed;
-    padding: 3px;
+    /* padding: 3px; */
+    /* padding-left: 2px; */
+    /* padding-right: 2px; */
     margin-left: calc((100vw - 384px) / 2);
     margin-right: calc((100vw - 384px) / 2);
     /* margin-top: calc((100vh - 692px) / 2); */
@@ -58,13 +60,14 @@ body {
     line-height: 60px;   
     letter-spacing: 14px;
     border-radius: 7px;
-    margin-bottom: -10px;
-    margin-top: 4px;
+    margin-bottom: 0px;
+    margin-top: 7px;
 }
 
 .middle {
     display: flex;
-    margin-bottom: -10px;
+    margin-bottom: 0px;
+    
 }
 
 .leftSide {
@@ -92,7 +95,7 @@ body {
 
 .nextText {
     font-family: 'Source Code Pro';
-    margin-top: 60px;
+    margin-top: 30px;
     font-size: 20px;
     font-weight: 700;
     background-color: gainsboro;
@@ -126,7 +129,7 @@ body {
 
 #glassIn {
     font-family: 'Source Code Pro';
-    font-size:29px;
+    font-size:28px;
     font-weight: bolder;
     white-space: pre;
     text-align: center;

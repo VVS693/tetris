@@ -97,7 +97,7 @@ document.getElementById("scoreLines").innerText = pageHeight
 let scaleTetrisOk = 1
 
 scaleTetrisOk = Math.min(pageHeight / 692,  pageWidth / 384)
-document.getElementById("startButton").innerText = scaleTetrisOk
+// document.getElementById("startButton").innerText = scaleTetrisOk
 
 
 document.documentElement.style.setProperty('--scaleTetris', scaleTetrisOk)
