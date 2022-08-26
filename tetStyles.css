@@ -8,63 +8,55 @@
     margin: 0;
 } 
 
+:root {
+    --scaleTetris: 1;
+  }
+
 body {
     min-width: 384px;
-    height: 100vh;
+    /* height: 100vh; */
+    
     overflow: hidden;
     overscroll-behavior: none;
-    position: fixed;
     font-size: 16px;
     font-weight: normal;
     color: black;
 }
 
+
 .tetrisContainer {
+    /* transform: scale(min(calc(100% / 692px), calc(100% / 384px))); */
+    /* calc(100vh / 692px); */
+    /* transform: scale(calc(100vh / 10)); */
+    /* transform: scale(calc(800vh / 692vh)); */
+    /* transform: scale(var(--scaleTetris)); */
+    /* transform: scale(1.43); */
     width: 384px;
-    height: 705px;
+    height: 100vh;
     position: fixed;
-    margin: auto;
+    padding: 3px;
+    margin-left: calc((100vw - 384px) / 2);
+    margin-right: calc((100vw - 384px) / 2);
+    margin-top: calc((100vh - 692px) / 2);
+    margin-bottom: calc((100vh - 692px) / 2);
+
+
+
     display: block;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
     -moz-user-select: none;      /* Firefox */
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;
-    touch-action: manipulation;
-    padding-top: 3px;
-    padding-left: 3px;
-    padding-right: 3px;
     /* background-color: bisque; */
 }
 
-.leftSide {
-    width: 270px;
-}
-#title {
-    font-family: 'Silkscreen';
-    width: 384px;
-    height: 50px;
-    background-color: gainsboro;
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 50px;   
-    letter-spacing: 14px;
-    border-radius: 7px;
+.middle {
+    display: flex;
     margin-bottom: -10px;
 }
 
-#glassIn {
-    font-family: 'Source Code Pro';
-    font-size: 30px;
-    font-weight: bolder;
-    white-space: pre;
-    text-align: center;
-    line-height: 0.75em; 
-    letter-spacing: 4px;
-}
-
-.rightSide {
+.leftSide {
     width: 112px;
     /* padding-top: 90px; */
     margin-left: 2px;
@@ -89,7 +81,7 @@ body {
 
 .nextText {
     font-family: 'Source Code Pro';
-    margin-top: 66px;
+    margin-top: 60px;
     font-size: 20px;
     font-weight: 700;
     background-color: gainsboro;
@@ -116,10 +108,35 @@ body {
     text-align: center;
 }
 
-.middle {
-    display: flex;
+.rightSide {
+    width: 270px;
+    margin-left: 8px;
+}
+
+#title {
+    font-family: 'Silkscreen';
+    width: 384px;
+    height: 60px;
+    background-color: gainsboro;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;   
+    letter-spacing: 14px;
+    border-radius: 7px;
     margin-bottom: -10px;
 }
+
+#glassIn {
+    font-family: 'Source Code Pro';
+    font-size:29px;
+    font-weight: bolder;
+    white-space: pre;
+    text-align: center;
+    line-height: 0.75em; 
+    letter-spacing: 4px;
+}
+
 .buttons {
     text-align: center;
    

@@ -69,41 +69,33 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
     document.addEventListener("keydown", ArrowUpKeydoen);
     document.getElementById("rotate").addEventListener("click", ArrowUp);
 
-    function swipeRightLeftUp (zone) {
-        let touchstartX = 0;
-        let touchstartY = 0;
-        let touchendX = 0;
-        let touchendY = 0;
-    
-        const gestureZone = document.getElementById(zone);
-    
-        gestureZone.addEventListener('touchstart', function(event) {
-            touchstartX = event.changedTouches[0].screenX;
-            touchstartY = event.changedTouches[0].screenY;
-        }, false);
-    
-        gestureZone.addEventListener('touchend', function(event) {
-            touchendX = event.changedTouches[0].screenX;
-            touchendY = event.changedTouches[0].screenY;
-            handleGesture();
-        }, false); 
-    
-        function handleGesture() {
-            if ((touchstartX - touchendX) >= minDist && (touchstartX - touchendX) <= maxDist) {
-                ArrowLeft();
-            }
-            
-            if ((touchendX - touchstartX) >= minDist && (touchendX - touchstartX) <= maxDist) {
-                ArrowRight();
-            }
-            
-            if ((touchstartY - touchendY) >= minDist && (touchstartY - touchendY) <= maxDist) {
-                ArrowUp();
-            }
+    let touchstartX = 0;
+    let touchstartY = 0;
+    let touchendX = 0;
+    let touchendY = 0;
+
+    function touchstartXY(event) {
+        touchstartX = event.changedTouches[0].screenX;
+        touchstartY = event.changedTouches[0].screenY;
+    }
+    function touchendXY(event) {
+        touchendX = event.changedTouches[0].screenX;
+        touchendY = event.changedTouches[0].screenY;
+        calcXup();
+    }
+    function calcXup() {
+        if ((touchstartX - touchendX) >= minDist && (touchstartX - touchendX) <= maxDist) {
+            ArrowLeft();
+        }
+        if ((touchendX - touchstartX) >= minDist && (touchendX - touchstartX) <= maxDist) {
+            ArrowRight();
+        }
+        if ((touchstartY - touchendY) >= minDist && (touchstartY - touchendY) <= maxDist) {
+            ArrowUp();
         }
     }
-
-    swipeRightLeftUp(zone)
+    document.getElementById(zone).addEventListener('touchstart', touchstartXY, false);
+    document.getElementById(zone).addEventListener('touchend', touchendXY, false); 
 
     document.getElementById("startButton").addEventListener("click", () => location.reload());    
 
@@ -153,7 +145,10 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                     document.getElementById("right").removeEventListener("click", ArrowRight);
                     document.removeEventListener("keydown", ArrowUpKeydoen);
                     document.getElementById("rotate").removeEventListener("click", ArrowUp);
-
+                    document.getElementById(zone).removeEventListener('touchstart', touchstartDown, false);
+                    document.getElementById(zone).removeEventListener('touchend', touchendDown, false);
+                    document.getElementById(zone).removeEventListener('touchstart', touchstartXY, false);
+                    document.getElementById(zone).removeEventListener('touchend', touchendXY, false); 
                     moveTimer(timerTemp) 
             }
             function ArrowDownKeydown(event) {
@@ -165,33 +160,20 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
             document.addEventListener("keydown", ArrowDownKeydown);
             document.getElementById("down").addEventListener("click", ArrowDown);
 
-
-            function swipeDown(zone) {
-
-                let touchstartY = 0;
-                let touchendY = 0;
-            
-                const gestureZone = document.getElementById(zone);
-            
-                gestureZone.addEventListener('touchstart', function(event) {
-                    touchstartY = event.changedTouches[0].screenY;
-                }, false);
-            
-                gestureZone.addEventListener('touchend', function(event) {
-                    touchendY = event.changedTouches[0].screenY;
-                    handleGesture();
-                }, false); 
-            
-                function handleGesture() {
-                    
-                    if ((touchendY - touchstartY) >= minDist && (touchendY - touchstartY) <= maxDist) {
-                        ArrowDown();
-                    }
+            let touchstartY = 0;
+            let touchendY = 0;
+            function touchstartDown(event) {
+                touchstartY = event.changedTouches[0].screenY;
+            }
+            function touchendDown(event) {
+                touchendY = event.changedTouches[0].screenY;
+                if ((touchendY - touchstartY) >= minDist && (touchendY - touchstartY) <= maxDist) {
+                    ArrowDown();
                 }
             }
+            document.getElementById(zone).addEventListener('touchstart', touchstartDown, false);
+            document.getElementById(zone).addEventListener('touchend', touchendDown, false); 
         
-                swipeDown(zone)
-
                 moveTimer(timer)
         })
 
@@ -207,7 +189,8 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                 document.getElementById("right").removeEventListener("click", ArrowRight);
                 document.removeEventListener("keydown", ArrowUpKeydoen);
                 document.getElementById("rotate").removeEventListener("click", ArrowUp);
-
+                document.getElementById(zone).removeEventListener('touchstart', touchstartXY, false);
+                document.getElementById(zone).removeEventListener('touchend', touchendXY, false);
                     score.figures++
 
                     gameOver()

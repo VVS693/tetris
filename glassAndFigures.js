@@ -32,16 +32,16 @@ const glass = [
 ]
 const glassMark = '☐' // символ рисования стенок и фигур
 const timerStart = 350 // начальная скорость
-const timerTemp = 25 // скорость падения
+const timerTemp = 20 // скорость падения
 const score = {
     figures: 0,
     lines: 0
 }
-const maxDist = 270
-const minDist = 45
+const maxDist = 250
+const minDist = 30
 let rndFirst = []
 let rndSecond = []
-const zone = "leftSide"
+const zone = "rightSide"
 
 // определяем фигуры
 let O = [
