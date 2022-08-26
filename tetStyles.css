@@ -14,8 +14,7 @@
 
 body {
     min-width: 384px;
-    /* height: 100vh; */
-    
+    height: 100vh;
     overflow: hidden;
     overscroll-behavior: none;
     font-size: 16px;
@@ -37,11 +36,8 @@ body {
     padding: 3px;
     margin-left: calc((100vw - 384px) / 2);
     margin-right: calc((100vw - 384px) / 2);
-    margin-top: calc((100vh - 692px) / 2);
-    margin-bottom: calc((100vh - 692px) / 2);
-
-
-
+    /* margin-top: calc((100vh - 692px) / 2); */
+    /* margin-bottom: calc((100vh - 692px) / 2); */
     display: block;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -49,6 +45,21 @@ body {
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;
     /* background-color: bisque; */
+}
+
+#title {
+    font-family: 'Silkscreen';
+    width: 384px;
+    height: 60px;
+    background-color: gainsboro;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;   
+    letter-spacing: 14px;
+    border-radius: 7px;
+    margin-bottom: -10px;
+    margin-top: 4px;
 }
 
 .middle {
@@ -111,20 +122,6 @@ body {
 .rightSide {
     width: 270px;
     margin-left: 8px;
-}
-
-#title {
-    font-family: 'Silkscreen';
-    width: 384px;
-    height: 60px;
-    background-color: gainsboro;
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 60px;   
-    letter-spacing: 14px;
-    border-radius: 7px;
-    margin-bottom: -10px;
 }
 
 #glassIn {
