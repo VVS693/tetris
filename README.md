@@ -1,2 +1,3 @@
 # tetris
-for tetris
+Once upon a time I wrote Tetris in Pascal...
+When I started learning JS, I decided to repeat it)
