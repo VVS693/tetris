@@ -6,7 +6,7 @@
 * {
     padding: 0;
     margin: 0;
-} 
+}
 
 :root {
     --scaleTetris: 1;
@@ -14,7 +14,6 @@
 
 body {
     min-width: 384px;
-    /* height: 100vh; */
     overflow: hidden;
     overscroll-behavior: none;
     font-size: 16px;
@@ -24,29 +23,16 @@ body {
 
 
 .tetrisContainer {
-    /* transform: scale(min(calc(100% / 692px), calc(100% / 384px))); */
-    /* calc(100vh / 692px); */
-    /* transform: scale(calc(100vh / 10)); */
-    /* transform: scale(calc(800vh / 692vh)); */
-    /* transform: scale(var(--scaleTetris)); */
-    /* transform: scale(1.43); */
     width: 384px;
-    /* height: 100vh; */
     position: fixed;
-    /* padding: 3px; */
-    /* padding-left: 2px; */
-    /* padding-right: 2px; */
     margin-left: calc((100vw - 384px) / 2);
     margin-right: calc((100vw - 384px) / 2);
-    /* margin-top: calc((100vh - 692px) / 2); */
-    /* margin-bottom: calc((100vh - 692px) / 2); */
     display: block;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
     -moz-user-select: none;      /* Firefox */
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;
-    /* background-color: bisque; */
 }
 
 #title {
@@ -57,7 +43,7 @@ body {
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    line-height: 60px;   
+    line-height: 60px;
     letter-spacing: 14px;
     border-radius: 7px;
     margin-bottom: 0px;
@@ -67,12 +53,11 @@ body {
 .middle {
     display: flex;
     margin-bottom: 0px;
-    
+
 }
 
 .leftSide {
     width: 112px;
-    /* padding-top: 90px; */
     margin-left: 2px;
 }
 
@@ -89,7 +74,7 @@ body {
     font-weight: bolder;
     white-space: pre;
     text-align: center;
-    line-height: 0.75em; 
+    line-height: 0.75em;
     letter-spacing: 4px;
 }
 
@@ -100,7 +85,7 @@ body {
     font-weight: 700;
     background-color: gainsboro;
     text-align: center;
-    line-height: 35px; 
+    line-height: 35px;
     border-radius: 7px;
 }
 .scoreText {
@@ -110,7 +95,7 @@ body {
     font-weight: 700;
     background-color: gainsboro;
     text-align: center;
-    line-height: 35px; 
+    line-height: 35px;
     border-radius: 7px;
 }
 .scoreValue {
@@ -129,17 +114,16 @@ body {
 
 #glassIn {
     font-family: 'Source Code Pro';
-    font-size:28px;
-    font-weight: bolder;
+    font-size: 27px;
     white-space: pre;
     text-align: center;
-    line-height: 0.75em; 
+    line-height: 0.75em;
     letter-spacing: 4px;
 }
 
 .buttons {
     text-align: center;
-   
+
 }
 .button {
     font-family: 'Source Code Pro';
@@ -163,7 +147,7 @@ body {
     border-radius: 7px;
     text-align: center;
     margin-left: 3px;
-    margin-right: 3px; 
+    margin-right: 3px;
     margin-top: 33px;
     color: red;
 }

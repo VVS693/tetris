@@ -1,6 +1,6 @@
 // основной
 function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
-       
+
     let xStartTemp = xStart;
     let yStartTemp = yStart;
 
@@ -20,7 +20,7 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
         }
     }
     function ArrowLeftKeydown(event) {
-        if (event.code == "ArrowLeft") {
+        if (event.code === "ArrowLeft") {
             ArrowLeft()
         }
     }
@@ -41,8 +41,8 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
             }
     }
     function ArrowRightKeydown(event) {
-        if (event.code == "ArrowRight") {
-            ArrowRight() 
+        if (event.code === "ArrowRight") {
+            ArrowRight()
         }
     }
     document.addEventListener("keydown", ArrowRightKeydown);
@@ -52,7 +52,7 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
             if (
                 figInGlass(rotateFigure(currentFigure), glassCurrent, xStartTemp, yStartTemp)
                     .join()
-                    .includes(2) 
+                    .includes(2)
             ) {
                 currentFigure = currentFigure
             } else {
@@ -62,7 +62,7 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
             }
     }
     function ArrowUpKeydoen(event) {
-        if (event.code == "ArrowUp") {
+        if (event.code === "ArrowUp") {
             ArrowUp()
         }
     }
@@ -95,14 +95,14 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
         }
     }
     document.getElementById(zone).addEventListener('touchstart', touchstartXY, false);
-    document.getElementById(zone).addEventListener('touchend', touchendXY, false); 
+    document.getElementById(zone).addEventListener('touchend', touchendXY, false);
 
-    document.getElementById("startButton").addEventListener("click", () => location.reload());    
+    document.getElementById("startButton").addEventListener("click", () => location.reload());
 
         const promiseDraw = new Promise(function(resolve, reject) {
 
             function moveTimer(timer) {
-                
+
                 let timerId = setInterval(() => {
 
                     if (figInGlass(currentFigure, glassCurrent, xStartTemp, yStartTemp).join().includes(2)) {
@@ -112,12 +112,12 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                         if (isGlassFull(glassCurrent)) {
                             reject(score)
                         }
-                        
+
                         resolve(score)
 
                     } else {
 
-                            if (isLineFull(glassCurrent) != -1) {
+                            if (isLineFull(glassCurrent) !== -1) {
                                 let lineFull = isLineFull(glassCurrent)
                                 score.lines++
                                 for (let i = lineFull; i > 0; i--) {
@@ -125,15 +125,15 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                                         glassCurrent[i][k] = glassCurrent[i - 1][k]
                                     }
                                 }
-                            }  
+                            }
 
                             glassTemp = figInGlass(currentFigure, glassCurrent, xStartTemp, yStartTemp);
                             drawGlass(glassTemp);
                             yStartTemp++;
-                            
-                            } 
-                    
-                }, timer);    
+
+                            }
+
+                }, timer);
             }
 
             function ArrowDown() {
@@ -148,13 +148,13 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                     document.getElementById(zone).removeEventListener('touchstart', touchstartDown, false);
                     document.getElementById(zone).removeEventListener('touchend', touchendDown, false);
                     document.getElementById(zone).removeEventListener('touchstart', touchstartXY, false);
-                    document.getElementById(zone).removeEventListener('touchend', touchendXY, false); 
-                    moveTimer(timerTemp) 
+                    document.getElementById(zone).removeEventListener('touchend', touchendXY, false);
+                    moveTimer(timerTemp)
             }
             function ArrowDownKeydown(event) {
-                if (event.code == "ArrowDown") {
+                if (event.code === "ArrowDown") {
                     ArrowDown()
-                    moveTimer(timerTemp) 
+                    moveTimer(timerTemp)
                 }
             }
             document.addEventListener("keydown", ArrowDownKeydown);
@@ -172,8 +172,8 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                 }
             }
             document.getElementById(zone).addEventListener('touchstart', touchstartDown, false);
-            document.getElementById(zone).addEventListener('touchend', touchendDown, false); 
-        
+            document.getElementById(zone).addEventListener('touchend', touchendDown, false);
+
                 moveTimer(timer)
         })
 
@@ -194,10 +194,10 @@ function doTetris(xStart, yStart, currentFigure, timer, glassTemp) {
                     score.figures++
 
                     gameOver()
-                   
+
                     score.figures = 0
                     score.lines = 0
-            })   
+            })
 }
 
 let glassTemp = glass.map(el => el.slice());
